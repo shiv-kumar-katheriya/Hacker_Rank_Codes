@@ -6,7 +6,7 @@ elif s == '12:00:00PM':
 else:
     z = int(s[:2])
     a = s[8:]
-    print(z,a)
+    #print(z,a)
     if a == 'PM':
         if z < 12:
             z += 12
