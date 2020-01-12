@@ -1,5 +1,0 @@
-n = int(input())
-x = list(map(int,input().split()))
-z = max(x)
-t = x.count(z)
-print(t)
