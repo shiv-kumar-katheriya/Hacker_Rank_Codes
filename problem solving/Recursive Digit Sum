@@ -1,0 +1,36 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the superDigit function below.
+def superDigit(n, k):
+    p = str(n)
+    q = list()
+    for i in p :
+        q.append(int(i))
+    p = str(sum(q)*k)
+    while len(p) != 1 :
+        q = list()
+        for i in p :
+            q.append(int(i))
+        p = str(sum(q))
+    return int(p)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nk = input().split()
+
+    n = nk[0]
+
+    k = int(nk[1])
+
+    result = superDigit(n, k)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
