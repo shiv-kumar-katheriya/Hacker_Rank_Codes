@@ -1,0 +1,50 @@
+
+
+import math
+import os
+import random
+import re
+import sys
+
+def taumBday(b, w, bc, wc, z):
+    
+    if bc == wc :
+        a = (b * bc) + (wc * w)
+        return a
+    else :
+        if bc > wc :
+            a1 = b
+        else :
+            a1 = w
+        q = min(bc,wc)
+        a = (b*q) + (w*q) + (a1*z)
+        a1 = (b * bc) + (wc * w)
+        return min(a1,a)
+
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input().strip())
+
+    for t_itr in range(t):
+        first_multiple_input = input().rstrip().split()
+
+        b = int(first_multiple_input[0])
+
+        w = int(first_multiple_input[1])
+
+        second_multiple_input = input().rstrip().split()
+
+        bc = int(second_multiple_input[0])
+
+        wc = int(second_multiple_input[1])
+
+        z = int(second_multiple_input[2])
+
+        result = taumBday(b, w, bc, wc, z)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
