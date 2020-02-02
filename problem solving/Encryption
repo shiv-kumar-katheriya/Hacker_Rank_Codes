@@ -1,0 +1,9 @@
+from math import *
+if __name__ == '__main__':
+    s = input()
+    z = len(s)
+    q = sqrt(z)
+    col = ceil(q)  
+    row = floor(q)
+    for i in range(col):
+        print(s[i:z:col],end=" ")
