@@ -1,0 +1,10 @@
+from collections import OrderedDict
+import string
+n = int(input())
+d = OrderedDict()
+a = list()
+for i in range(n):
+    a = input().rpartition(" ")
+    d[a[0]] = d.get(a[0],0) + int(a[-1])
+for key,values in d.items():
+    print(key,values) 
